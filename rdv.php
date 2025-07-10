@@ -402,7 +402,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 padding: 20px;
             }
         }
-        
+
         /* scrollToTop */
         #scrollToTop {
             position: fixed;
@@ -528,10 +528,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h4>GARAGE AUTO</h4>
                     <p>Expert en réparation automobile depuis 20 ans, nous mettons notre savoir-faire à votre service.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/YADICARCENTER"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/YADICARCENTER" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.instagram.com/yadicarcenter?igsh=MWl5dW0yaHV6czE0NA==" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://ci.linkedin.com/company/yadi-car-center" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -572,7 +580,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Garage Auto. Tous droits réservés.</p>
+                <p>&copy; Yadi Car Center. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
