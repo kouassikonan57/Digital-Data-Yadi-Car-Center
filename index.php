@@ -396,6 +396,41 @@
             opacity: 1;
         }
 
+        /* responsive */
+        @media (max-width: 768px) {
+            .gallery-filters {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 colonnes de même taille */
+                gap: 10px;
+                /* espace entre les boutons */
+                padding: 0 10px;
+                margin-bottom: 30px;
+            }
+
+            .filter-btn {
+                width: 100%;
+                /* chaque bouton remplit sa colonne */
+                padding: 12px 10px;
+                /* un peu plus grand pour l’accessibilité */
+                font-size: 0.95rem;
+                text-align: center;
+                white-space: nowrap;
+                border-radius: 20px;
+                border: 2px solid var(--orange);
+                background: none;
+                color: var(--orange);
+                font-weight: 600;
+                transition: all 0.3s;
+            }
+
+            .filter-btn:hover,
+            .filter-btn.active {
+                background-color: var(--orange);
+                color: var(--blanc);
+            }
+        }
+
         /* Contact Form */
         .contact {
             background-color: var(--gris);
@@ -1322,29 +1357,42 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .popup-content {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-
-            .popup-images {
-                height: 250px;
+            .popup-container {
+                max-height: 90vh;
+                overflow-y: auto;
+                /* Permet de scroller si le contenu dépasse */
             }
 
             .popup-text {
                 padding: 20px;
+                overflow-wrap: break-word;
+                word-break: break-word;
+            }
+
+            .popup-content {
+                display: block;
+            }
+
+            .popup-images {
+                height: 200px;
             }
 
             .features {
                 grid-template-columns: 1fr;
+                gap: 10px;
             }
 
-            .popup-container {
-                margin: 5% auto;
-                max-height: 90vh;
+            .feature-item span {
+                font-size: 0.85rem;
+            }
+
+            .btn-popup {
+                font-size: 1rem;
+                padding: 10px 20px;
             }
         }
 
+        /* scrollToTop */
         #scrollToTop {
             position: fixed;
             bottom: 40px;
