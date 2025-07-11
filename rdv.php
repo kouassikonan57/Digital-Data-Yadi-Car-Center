@@ -574,7 +574,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h4>CONTACT</h4>
                     <div class="contact-info">
                         <p>Abidjan, Cocody, Angré face au nouveau CHU</p>
-                        <p>Tél: 06 633 32 32 / 22 00 78 30</p>
+                        <p>Tél: (+225) 05 06 63 63 32 / 25 22 00 78 30</p>
                         <p>Email: contact@yadi.ci</p>
                     </div>
                 </div>

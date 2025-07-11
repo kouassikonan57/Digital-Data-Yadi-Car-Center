@@ -1450,7 +1450,7 @@
         <canvas class="fireworks-canvas"></canvas> <!-- 🔥 Feux d’artifice -->
         <div class="container">
             <div class="hero-content">
-                <h1>VOTRE EXPERT AUTOMOBILE DEPUIS 20 ANS</h1>
+                <h1>VOTRE EXPERT AUTOMOBILE DE PROXIMITE</h1>
                 <p>Entretien, réparation, dépannage - Un service de qualité pour votre véhicule</p>
                 <div class="hero-buttons">
                     <a href="rdv.php#rdv" class="btn btn-orange">Prendre RDV</a>
@@ -1534,7 +1534,7 @@
         <div class="container">
             <div class="emergency-content">
                 <h3>URGENCE ROUTIÈRE ? APPELEZ-NOUS :</h3>
-                <div class="phone">(225) 06 633 32 32 / 22 00 78 30</div>
+                <div class="phone">(+225) 05 06 63 63 32 / 25 22 00 78 30</div>
             </div>
         </div>
     </section>
@@ -1549,45 +1549,53 @@
                 <div class="partenaires-track">
                     <!-- Partenaire 1 -->
                     <div class="partenaire">
-                        <img src="image/partenaires/Cote-dIvoire.jpg" alt="Logo Partenaire 1">
+                        <img src="image/partenaires/Atlantique-Assurances.png" alt="Logo Partenaire Atlantique Assurance">
                     </div>
 
                     <!-- Partenaire 2 -->
                     <div class="partenaire">
-                        <img src="image/partenaires/UCPS-BM.png" alt="Logo Partenaire 2">
+                        <img src="image/partenaires/UCPS-BM.png" alt="Logo Partenaire UCPS">
                     </div>
 
                     <!-- Partenaire 3 -->
                     <div class="partenaire">
-                        <img src="image/partenaires/unnamed.jpg" alt="Logo Partenaire 3">
+                        <img src="image/partenaires/unnamed.jpg" alt="Logo Partenaire Orange">
                     </div>
 
                     <!-- Partenaire 4 -->
                     <div class="partenaire">
-                        <img src="image/partenaires/bnetd.jpg" alt="Logo Partenaire 4">
+                        <img src="image/partenaires/bnetd.jpg" alt="Logo Partenaire bnetd">
                     </div>
 
                     <!-- Partenaire 5 -->
                     <div class="partenaire">
-                        <img src="image/partenaires/logo ansut.jpg" alt="Logo Partenaire 5">
+                        <img src="image/partenaires/logo ansut.jpg" alt="Logo Partenaire ansut">
                     </div>
 
                     <!-- Partenaire 6 -->
                     <div class="partenaire">
-                        <img src="image/partenaires/63367333-45696710.jpg.png" alt="Logo Partenaire 6">
+                        <img src="image/partenaires/logo-axa-assurance.png" alt="Logo Partenaire axa">
                     </div>
 
                     <!-- Dupliquez pour l'effet de boucle -->
                     <div class="partenaire">
-                        <img src="image/partenaires/0.jpg" alt="Logo Partenaire 1">
+                        <img src="image/partenaires/SLM assurances.png" alt="Logo Partenaire Sanlam">
                     </div>
 
                     <div class="partenaire">
-                        <img src="image/logo/logo_Ydia.png" alt="Logo Partenaire 2">
+                        <img src="image/partenaires/ascoma assurances.jpg" alt="Logo Partenaire Ascoma">
+                    </div> 
+                    
+                    <div class="partenaire">
+                        <img src="image/partenaires/willis-towers-watson.png" alt="Logo Partenaire Willis">
                     </div>
 
                     <div class="partenaire">
-                        <img src="image/logo/YADI Group_Logotype_DDCS_- Vf.jpg" alt="Logo Partenaire 3">
+                        <img src="image/logo/logo_Ydia.png" alt="Logo Partenaire Ydia">
+                    </div>
+
+                    <div class="partenaire">
+                        <img src="image/logo/YADI Group_Logotype_DDCS_- Vf.jpg" alt="Logo Partenaire Yadi">
                     </div>
                 </div>
             </div>
@@ -1601,17 +1609,37 @@
                 <h2>NOS RÉALISATIONS</h2>
                 <p>Découvrez quelques-uns de nos travaux récents</p>
             </div>
-            <div class="gallery-filters">
+            <!-- <div class="gallery-filters">
                 <button class="filter-btn active" data-filter="all">Tout</button>
                 <button class="filter-btn" data-filter="carrosserie">Carrosserie</button>
                 <button class="filter-btn" data-filter="mecanique">Mécanique</button>
                 <button class="filter-btn" data-filter="pneus">Pneus</button>
                 <button class="filter-btn" data-filter="diagnostic">Diagnostic</button>
                 <button class="filter-btn" data-filter="climatisation">Climatisation</button>
-            </div>
+            </div> -->
             <div class="gallery-grid">
                 <div class="gallery-item" data-category="carrosserie">
                     <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Réparation carrosserie">
+                    <div class="overlay">
+                        <h3>Réparation carrosserie</h3>
+                        <p>Peinture et restauration complète</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="carrosserie">
+                    <img src="image/Carrosserie.jpg" alt="Réparation carrosserie">
+                    <div class="overlay">
+                        <h3>Réparation carrosserie</h3>
+                        <p>Carrosserie et restauration complète</p>
+                    </div>
+                </div><div class="gallery-item" data-category="carrosserie">
+                    <img src="image/Carrosserie1.jpg" alt="Réparation carrosserie">
+                    <div class="overlay">
+                        <h3>Réparation carrosserie</h3>
+                        <p>Carrrosserie et restauration complète</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="carrosserie">
+                    <img src="image/Peinture.png" alt="Réparation carrosserie">
                     <div class="overlay">
                         <h3>Réparation carrosserie</h3>
                         <p>Peinture et restauration complète</p>
@@ -1679,10 +1707,10 @@
                         </div>
                         <p class="texte">"Excellent service ! Mon véhicule est comme neuf après la révision. Le personnel est professionnel et accueillant."</p>
                         <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client 1" class="client-photo">
+                            <img src="image/imgtemoignaige1.jpeg" alt="Client 1" class="client-photo">
                             <div>
-                                <h4>Jean D.</h4>
-                                <p class="client-ville">Abidjan</p>
+                                <h4>Ariel G.</h4>
+                                <p class="client-ville">Yopougon</p>
                             </div>
                         </div>
                     </div>
@@ -1700,9 +1728,9 @@
                         </div>
                         <p class="texte">"Rapide et efficace pour le changement de mes pneus. Prix très corrects comparés aux autres garages de la zone."</p>
                         <div class="client-info">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client 2" class="client-photo">
+                            <img src="image/imgtemoignaige.jpeg" alt="Client 2" class="client-photo">
                             <div>
-                                <h4>Amina K.</h4>
+                                <h4>Alexandra K.</h4>
                                 <p class="client-ville">Cocody</p>
                             </div>
                         </div>
@@ -1812,7 +1840,7 @@
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">📞</div>
-                            <div>(+225) 06 633 32 32 / 22 00 78 30</div>
+                            <div>(+225) 05 06 63 63 32 / 25 22 00 78 30</div>
                         </div>
                         <div class="contact-item">
                             <div class="contact-icon">✉️</div>
@@ -1825,7 +1853,7 @@
                         <div class="contact-item">
                             <div class="map-wrapper">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.8313972902155!2d-3.9901235!3d5.3601011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ecf9b65c340d%3A0x1e2871ed9b47ecf4!2sCHU%20Angr%C3%A9!5e0!3m2!1sfr!2sci!4v1719943850000!5m2!1sfr!2sci"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4294.243177002735!2d-3.957692174915489!3d5.400896083377211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc19322ed3e5be3%3A0x3a33a2465ea5a10!2sYADI%20Car%20Center!5e0!3m2!1sfr!2sci!4v1752237236803!5m2!1sfr!2sci"
                                     width="100%"
                                     height="400"
                                     style="border:0;"
@@ -1920,7 +1948,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h4>GARAGE AUTO</h4>
-                    <p>Expert en réparation automobile depuis 20 ans, nous mettons notre savoir-faire à votre service.</p>
+                    <p>Expert en réparation automobile depuis 2018, nous mettons notre savoir-faire à votre service.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/YADICARCENTER" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-facebook-f"></i>
@@ -1959,13 +1987,14 @@
                     <h4>CONTACT</h4>
                     <div class="contact-info">
                         <p>Abidjan, Cocody, Angré face au nouveau CHU </p>
-                        <p>Tél: 06 633 32 32 / 22 00 78 30</p>
+                        <p>Tél: (+225) 05 06 63 63 32 / 25 22 00 78 30</p>
                         <p>Email: contact@yadi.ci</p>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; Yadi Car Center. Tous droits réservés.</p>
+                <p>by KFernand</p>
             </div>
         </div>
     </footer>
@@ -2141,7 +2170,7 @@
         const servicesData = {
             mecanique: {
                 title: "Mécanique Générale",
-                image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+                image: "image/Mecanique0.png",
                 description: "Notre atelier de mécanique générale prend en charge tous les travaux d'entretien et de réparation de votre véhicule. Nos mécaniciens certifiés utilisent des pièces de qualité pour garantir la longévité de votre automobile.",
                 features: [
                     "Vidange complète avec filtres",
