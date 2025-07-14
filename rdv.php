@@ -57,8 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Envoi
             $mail->send();
             $confirmation = "✅ Votre rendez-vous a été confirmé. Nous vous contacterons pour validation.";
+            // Réinitialiser les champs après succès
+            $nom = $email = $telephone = $service = $date = $heure = $message = '';
         } catch (Exception $e) {
             $erreurs[] = "❌ Erreur lors de l'envoi du message : " . $mail->ErrorInfo;
+            // Réinitialiser les champs après succès
+            $nom = $email = $telephone = $service = $date = $heure = $message = '';
         }
     }
 }
@@ -494,33 +498,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form class="form-rdv" method="POST" action="">
                     <div class="form-group">
                         <label for="nom">Nom complet</label>
-                        <input type="text" id="nom" name="nom" required value="<?= $_POST['nom'] ?? '' ?>">
+                        <input type="text" id="nom" name="nom" required value="<?= htmlspecialchars($nom ?? '') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required value="<?= $_POST['email'] ?? '' ?>">
+                        <input type="email" id="email" name="email" required value="<?= htmlspecialchars($email ?? '') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="telephone">Téléphone</label>
-                        <input type="tel" id="telephone" name="telephone" required value="<?= $_POST['telephone'] ?? '' ?>">
+                        <input type="tel" id="telephone" name="telephone" required value="<?= htmlspecialchars($telephone ?? '') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="service">Service demandé</label>
                         <select id="service" name="service" required>
                             <option value="">-- Sélectionnez --</option>
-                            <option value="entretien" <?= ($_POST['service'] ?? '') == 'entretien' ? 'selected' : '' ?>>Entretien</option>
-                            <option value="reparation" <?= ($_POST['service'] ?? '') == 'reparation' ? 'selected' : '' ?>>Réparation</option>
-                            <option value="diagnostic" <?= ($_POST['service'] ?? '') == 'diagnostic' ? 'selected' : '' ?>>Diagnostic</option>
-                            <option value="carrosserie" <?= ($_POST['service'] ?? '') == 'carrosserie' ? 'selected' : '' ?>>Carrosserie</option>
+                            <option value="entretien" <?= ($service ?? '') == 'entretien' ? 'selected' : '' ?>>Entretien</option>
+                            <option value="reparation" <?= ($service ?? '') == 'reparation' ? 'selected' : '' ?>>Réparation</option>
+                            <option value="diagnostic" <?= ($service ?? '') == 'diagnostic' ? 'selected' : '' ?>>Diagnostic</option>
+                            <option value="carrosserie" <?= ($service ?? '') == 'carrosserie' ? 'selected' : '' ?>>Carrosserie</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label for="date">Date</label>
-                        <input type="date" id="date" name="date" min="<?= date('Y-m-d') ?>" required value="<?= $_POST['date'] ?? '' ?>">
+                        <input type="date" id="date" name="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($date ?? '') ?>">
                     </div>
 
                     <div class="form-group">
@@ -528,12 +532,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="horaires-dispo" id="horaires">
                             <!-- Les créneaux seront générés par JavaScript -->
                         </div>
-                        <input type="hidden" id="heure" name="heure" required value="<?= $_POST['heure'] ?? '' ?>">
+                        <input type="hidden" id="heure" name="heure" required value="<?= htmlspecialchars($heure ?? '') ?>">
                     </div>
 
                     <div class="form-group" style="grid-column: 1 / -1;">
                         <label for="message">Informations complémentaires</label>
-                        <textarea id="message" name="message" rows="4"><?= $_POST['message'] ?? '' ?></textarea>
+                        <textarea id="message" name="message" rows="4"><?= htmlspecialchars($message ?? '') ?></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Confirmer le rendez-vous</button>
