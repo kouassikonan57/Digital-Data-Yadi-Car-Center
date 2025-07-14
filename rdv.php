@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($erreurs)) {
         // Envoi d'email
-        $to = "contact@yadi.ci, secondemail@gmail.com";
+        $to = "yadigarage@gmail.com, secondemail@gmail.com";
         $sujet = "Nouveau RDV en ligne - $service";
         $contenu = "Nom: $nom\n";
         $contenu .= "Email: $email\n";

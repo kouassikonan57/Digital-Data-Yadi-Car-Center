@@ -1779,7 +1779,7 @@
             // Traitement du formulaire
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Configuration
-                $destinataire = "contact@yadi.ci, secondemail@gmail.com";
+                $destinataire = "yadigarage@gmail.com, secondemail@gmail.com";
                 $sujet = "Nouveau message depuis le site Yadi Car Center";
 
                 // Récupération des données
