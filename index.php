@@ -1923,17 +1923,17 @@
 
                         <div class="form-group">
                             <label for="name">Nom complet</label>
-                            <input type="text" id="name" name="name" class="form-control" required>
+                            <input type="text" id="name" name="name" class="form-control" autocomplete="off" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
+                            <input type="email" id="email" name="email" class="form-control" autocomplete="off" required>
                         </div>
 
                         <div class="form-group">
                             <label for="phone">Téléphone</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                            <input type="tel" id="phone" name="phone" class="form-control" autocomplete="off" required>
                         </div>
 
                         <div class="form-group">
@@ -1953,28 +1953,28 @@
                         <div id="devis-fields" style="display: none;">
                             <div class="form-group">
                                 <label for="marque_vehicule">Marque du véhicule</label>
-                                <input type="text" id="marque_vehicule" name="marque_vehicule" class="form-control">
+                                <input type="text" id="marque_vehicule" name="marque_vehicule" class="form-control" autocomplete="off" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="modele_vehicule">Modèle du véhicule</label>
-                                <input type="text" id="modele_vehicule" name="modele_vehicule" class="form-control">
+                                <input type="text" id="modele_vehicule" name="modele_vehicule" class="form-control" autocomplete="off" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="annee_vehicule">Année du véhicule</label>
-                                <input type="text" id="annee_vehicule" name="annee_vehicule" class="form-control">
+                                <input type="text" id="annee_vehicule" name="annee_vehicule" class="form-control" autocomplete="off" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="probleme">Problème rencontré</label>
-                                <textarea id="probleme" name="probleme" class="form-control" rows="3"></textarea>
+                                <textarea id="probleme" name="probleme" class="form-control" rows="3" autocomplete="off" required></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="5" autocomplete="off" required></textarea>
                         </div>
 
                         <button type="submit" class="submit-btn">Envoyer <i>→</i></button>

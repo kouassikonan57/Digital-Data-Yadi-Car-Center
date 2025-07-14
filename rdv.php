@@ -498,17 +498,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form class="form-rdv" method="POST" action="">
                     <div class="form-group">
                         <label for="nom">Nom complet</label>
-                        <input type="text" id="nom" name="nom" required value="<?= htmlspecialchars($nom ?? '') ?>">
+                        <input type="text" id="nom" name="nom" required autocomplete="off" value="<?= htmlspecialchars($nom ?? '') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required value="<?= htmlspecialchars($email ?? '') ?>">
+                        <input type="email" id="email" name="email" required autocomplete="off" value="<?= htmlspecialchars($email ?? '') ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="telephone">Téléphone</label>
-                        <input type="tel" id="telephone" name="telephone" required value="<?= htmlspecialchars($telephone ?? '') ?>">
+                        <input type="tel" id="telephone" name="telephone" required autocomplete="off" value="<?= htmlspecialchars($telephone ?? '') ?>">
                     </div>
 
                     <div class="form-group">
@@ -524,7 +524,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="form-group">
                         <label for="date">Date</label>
-                        <input type="date" id="date" name="date" min="<?= date('Y-m-d') ?>" required value="<?= htmlspecialchars($date ?? '') ?>">
+                        <input type="date" id="date" name="date" min="<?= date('Y-m-d') ?>" required autocomplete="off" value="<?= htmlspecialchars($date ?? '') ?>">
                     </div>
 
                     <div class="form-group">
@@ -537,7 +537,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="form-group" style="grid-column: 1 / -1;">
                         <label for="message">Informations complémentaires</label>
-                        <textarea id="message" name="message" rows="4"><?= htmlspecialchars($message ?? '') ?></textarea>
+                        <textarea id="message" name="message" autocomplete="off" rows="4"><?= htmlspecialchars($message ?? '') ?></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Confirmer le rendez-vous</button>
