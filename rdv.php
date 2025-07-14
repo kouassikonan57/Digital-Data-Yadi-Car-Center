@@ -4,6 +4,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
+
 // Traitement du formulaire
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = htmlspecialchars($_POST['nom']);
@@ -16,15 +17,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validation des données
     $erreurs = [];
-    if (empty($nom)) $erreurs[] = "Le nom est requis";
-    if (empty($telephone)) $erreurs[] = "Le téléphone est requis";
-    if (empty($date)) $erreurs[] = "La date est requise";
-    if (empty($heure)) $erreurs[] = "L'heure est requise";
+    if (empty($nom)) $erreurs[] = "Le nom est requis.";
+    if (empty($telephone)) $erreurs[] = "Le téléphone est requis.";
+    if (empty($date)) $erreurs[] = "La date est requise.";
+    if (empty($heure)) $erreurs[] = "L'heure est requise.";
 
     if (empty($erreurs)) {
-        // Envoi d'email
-        $to = "yadigarage@gmail.com, secondemail@gmail.com";
-        $sujet = "Nouveau RDV en ligne - $service";
+        // Préparer le contenu de l'email
         $contenu = "Nom: $nom\n";
         $contenu .= "Email: $email\n";
         $contenu .= "Téléphone: $telephone\n";
@@ -32,16 +31,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $contenu .= "Date: $date à $heure\n";
         $contenu .= "Message: $message\n";
 
-        $headers = "From: $email";
+        // Envoi avec PHPMailer
+        $mail = new PHPMailer(true);
 
-        if (mail($to, $sujet, $contenu, $headers)) {
-            $confirmation = "Votre rendez-vous a été confirmé. Nous vous contacterons pour validation.";
-        } else {
-            $erreurs[] = "Une erreur est survenue lors de l'envoi";
+        try {
+            // Configuration du serveur SMTP
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'konitokouassi0@gmail.com'; // <-- À remplacer
+            $mail->Password = 'sydc wnee cwht dewm'; // <-- À remplacer par mot de passe d'application
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+
+            // Expéditeur et destinataires
+            $mail->setFrom($email, $nom); // L'utilisateur comme expéditeur
+            $mail->addAddress('yadigarage@gmail.com'); // destinataire principal
+            $mail->addAddress('secondemail@gmail.com'); // destinataire secondaire
+
+            // Contenu de l'email
+            $mail->isHTML(false);
+            $mail->Subject = "Nouveau RDV en ligne - $service";
+            $mail->Body = $contenu;
+
+            // Envoi
+            $mail->send();
+            $confirmation = "✅ Votre rendez-vous a été confirmé. Nous vous contacterons pour validation.";
+        } catch (Exception $e) {
+            $erreurs[] = "❌ Erreur lors de l'envoi du message : " . $mail->ErrorInfo;
         }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
