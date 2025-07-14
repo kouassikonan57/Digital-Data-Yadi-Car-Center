@@ -1584,8 +1584,8 @@
 
                     <div class="partenaire">
                         <img src="image/partenaires/ascoma assurances.jpg" alt="Logo Partenaire Ascoma">
-                    </div> 
-                    
+                    </div>
+
                     <div class="partenaire">
                         <img src="image/partenaires/willis-towers-watson.png" alt="Logo Partenaire Willis">
                     </div>
@@ -1631,7 +1631,8 @@
                         <h3>Réparation carrosserie</h3>
                         <p>Carrosserie et restauration complète</p>
                     </div>
-                </div><div class="gallery-item" data-category="carrosserie">
+                </div>
+                <div class="gallery-item" data-category="carrosserie">
                     <img src="image/Carrosserie1.jpg" alt="Réparation carrosserie">
                     <div class="overlay">
                         <h3>Réparation carrosserie</h3>
@@ -1776,55 +1777,96 @@
     <section class="contact" id="contact">
         <div class="container">
             <?php
+
+            use PHPMailer\PHPMailer\PHPMailer;
+            use PHPMailer\PHPMailer\Exception;
+
+            require 'vendor/autoload.php';
+
+            $confirmation = '';
+            $erreurs = [];
+
             // Traitement du formulaire
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Configuration
-                $destinataire = "yadigarage@gmail.com, secondemail@gmail.com";
-                $sujet = "Nouveau message depuis le site Yadi Car Center";
-
                 // Récupération des données
-                $nom = htmlspecialchars($_POST['name']);
-                $email = htmlspecialchars($_POST['email']);
-                $telephone = htmlspecialchars($_POST['phone']);
-                $service = htmlspecialchars($_POST['service']);
-                $message = htmlspecialchars($_POST['message']);
-                $type_demande = htmlspecialchars($_POST['type_demande']);
+                $nom = htmlspecialchars($_POST['name'] ?? '');
+                $email = htmlspecialchars($_POST['email'] ?? '');
+                $telephone = htmlspecialchars($_POST['phone'] ?? '');
+                $service = htmlspecialchars($_POST['service'] ?? '');
+                $message = htmlspecialchars($_POST['message'] ?? '');
+                $type_demande = htmlspecialchars($_POST['type_demande'] ?? '');
 
-                // Infos supplémentaires pour devis
-                $marque_vehicule = isset($_POST['marque_vehicule']) ? htmlspecialchars($_POST['marque_vehicule']) : '';
-                $modele_vehicule = isset($_POST['modele_vehicule']) ? htmlspecialchars($_POST['modele_vehicule']) : '';
-                $annee_vehicule = isset($_POST['annee_vehicule']) ? htmlspecialchars($_POST['annee_vehicule']) : '';
-                $probleme = isset($_POST['probleme']) ? htmlspecialchars($_POST['probleme']) : '';
+                $marque_vehicule = htmlspecialchars($_POST['marque_vehicule'] ?? '');
+                $modele_vehicule = htmlspecialchars($_POST['modele_vehicule'] ?? '');
+                $annee_vehicule = htmlspecialchars($_POST['annee_vehicule'] ?? '');
+                $probleme = htmlspecialchars($_POST['probleme'] ?? '');
 
-                // Construction du message
-                $contenu_email = "Type de demande: $type_demande\n";
-                $contenu_email .= "Nom: $nom\n";
-                $contenu_email .= "Email: $email\n";
-                $contenu_email .= "Téléphone: $telephone\n";
-                $contenu_email .= "Service concerné: $service\n\n";
+                // Validation simple
+                if (empty($nom)) $erreurs[] = "Le nom est requis.";
+                if (empty($email)) $erreurs[] = "L'adresse email est requise.";
+                if (empty($telephone)) $erreurs[] = "Le téléphone est requis.";
+                if (empty($message)) $erreurs[] = "Le message ne peut pas être vide.";
 
-                if ($type_demande == "devis") {
-                    $contenu_email .= "Détails du véhicule:\n";
-                    $contenu_email .= "Marque: $marque_vehicule\n";
-                    $contenu_email .= "Modèle: $modele_vehicule\n";
-                    $contenu_email .= "Année: $annee_vehicule\n";
-                    $contenu_email .= "Problème rencontré:\n$probleme\n\n";
+                if (empty($erreurs)) {
+                    // Construction du contenu du mail
+                    $sujet = "Nouveau message depuis le site Yadi Car Center";
+                    $contenu_email = "Type de demande: $type_demande\n";
+                    $contenu_email .= "Nom: $nom\n";
+                    $contenu_email .= "Email: $email\n";
+                    $contenu_email .= "Téléphone: $telephone\n";
+                    $contenu_email .= "Service concerné: $service\n\n";
+
+                    if ($type_demande == "devis") {
+                        $contenu_email .= "Détails du véhicule:\n";
+                        $contenu_email .= "Marque: $marque_vehicule\n";
+                        $contenu_email .= "Modèle: $modele_vehicule\n";
+                        $contenu_email .= "Année: $annee_vehicule\n";
+                        $contenu_email .= "Problème rencontré:\n$probleme\n\n";
+                    }
+
+                    $contenu_email .= "Message:\n$message\n";
+
+                    // Envoi avec PHPMailer
+                    $mail = new PHPMailer(true);
+
+                    try {
+                        // Configuration SMTP
+                        $mail->isSMTP();
+                        $mail->Host = 'smtp.gmail.com';
+                        $mail->SMTPAuth = true;
+                        $mail->Username = 'konitokouassi0@gmail.com';            // ← à remplacer
+                        $mail->Password = 'sydc wnee cwht dewm';    // ← à remplacer
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+                        $mail->Port = 587;
+
+                        // Expéditeur et destinataires
+                        $mail->setFrom($email, $nom);
+                        $mail->addAddress('yadigarage@gmail.com');
+                        $mail->addAddress('secondemail@gmail.com');
+
+                        $mail->Subject = $sujet;
+                        $mail->Body = $contenu_email;
+                        $mail->isHTML(false);
+
+                        $mail->send();
+                        $confirmation = "✅ Votre message a bien été envoyé. Nous vous contacterons rapidement.";
+
+                        // Réinitialiser les champs
+                        $nom = $email = $telephone = $service = $message = $type_demande = '';
+                        $marque_vehicule = $modele_vehicule = $annee_vehicule = $probleme = '';
+                    } catch (Exception $e) {
+                        $erreurs[] = "❌ Erreur lors de l'envoi : " . $mail->ErrorInfo;
+                    }
                 }
+            }
 
-                $contenu_email .= "Message:\n$message\n";
-
-                // Entêtes email
-                $headers = "From: $email\r\n";
-                $headers .= "Reply-To: $email\r\n";
-                $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
-
-                // Envoi de l'email (simulé pour cet exemple)
-                $envoi_reussi = true; // En production, utiliser mail($destinataire, $sujet, $contenu_email, $headers)
-
-                if ($envoi_reussi) {
-                    echo '<div class="status-message status-success">Votre message a bien été envoyé. Nous vous contacterons rapidement.</div>';
-                } else {
-                    echo '<div class="status-message status-error">Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer.</div>';
+            // Affichage du message
+            if (!empty($confirmation)) {
+                echo '<div class="status-message status-success">' . $confirmation . '</div>';
+            }
+            if (!empty($erreurs)) {
+                foreach ($erreurs as $err) {
+                    echo '<div class="status-message status-error">' . $err . '</div>';
                 }
             }
             ?>
