@@ -577,7 +577,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li><a href="index.php#services">Services</a></li>
                         <li><a href="index.php#galerie">Galerie</a></li>
                         <li><a href="index.php#contact">Contact</a></li>
-                        <li><a href="#">Yadi-Group</a></li>
+                        <li><a href="www.yadi.ci">Yadi-Group</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -593,9 +593,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h4>NOS FILIALES</h4>
                     <ul>
                         <li><a href="#">YADI CAR</a></li>
-                        <li><a href="#">DDCS</a></li>
+                        <li><a href="www.ddcs.ci">DDCS</a></li>
                         <li><a href="#">VROM</a></li>
-                        <li><a href="#">AUTRES</a></li>
+                        <li><a href="#">YDIA-CONSTRUCTION</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -609,6 +609,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="footer-bottom">
                 <p>&copy; Yadi Car Center. Tous droits réservés.</p>
+                <p>by KFernand</p>
             </div>
         </div>
     </footer>
